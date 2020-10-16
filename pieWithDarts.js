@@ -13,7 +13,7 @@ const batchDarts = 10000;
 const drawGraphic = true;
 
 let seed = 67; // use   null   for no seed
-let randomMethod = p5js; // null or p5js = p5js;    // =rndDigits;
+let randomMethod = p5js; // null or p5js = p5js;   // =rndDigits;
 let digitsMethod;
 
 function setup() {

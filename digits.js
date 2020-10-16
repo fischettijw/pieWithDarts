@@ -1,7 +1,7 @@
 let rndIndex;
 
 
-function randomSeedPie(seed) {
+function randomSeedDigits(seed) {
     if (seed == null) {
         rndIndex = 0;
     } else {

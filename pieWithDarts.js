@@ -12,16 +12,16 @@ const highStop = 3.14163;
 const batchDarts = 10000;
 const drawGraphic = true;
 
-let seed = 67;
-let randomMethod = rndDigits; // null or p5js = p5js;    // =rndPie;
-let digitsMethod; ///  digitsOfPie               digitsOfE
+let seed = 67; // use   null   for no seed
+let randomMethod = p5js; // null or p5js = p5js;    // =rndDigits;
+let digitsMethod;
 
 function setup() {
-    digitsMethod = digitsOfPie;
+    digitsMethod = digitsOfPie; //  digitsOfPie               digitsOfE
     digitsMethod = digitsOfE;
     randomMethod = (randomMethod == null) ? p5js : randomMethod;
     randomSeed((seed == null) ? null : seed); // p5js
-    randomSeedPie(((seed == null) ? 0 : seed)); // rndPie
+    randomSeedDigits(((seed == null) ? 0 : seed)); // rndDigits
     if (drawGraphic) {
         createCanvas(diam, diam);
         background(220);
@@ -87,7 +87,3 @@ function p5js() {
 function rndDigits() {
     return randomDigits(0, diam);
 }
-
-
-// D:\Documents\Probability and Simulation - orig\Probability (tchs)\John McMurrer
-// https://medium.com/cantors-paradise/estimating-%CF%80-using-monte-carlo-simulations-3459a84b5ef9

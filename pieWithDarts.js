@@ -13,7 +13,7 @@ const batchDarts = 10000;
 const drawGraphic = true;
 
 let seed = 67;
-let randomMethod = rndPie; // null or p5js = p5js;    // =rndPie;
+let randomMethod = rndDigits; // null or p5js = p5js;    // =rndPie;
 let digitsMethod; ///  digitsOfPie               digitsOfE
 
 function setup() {
@@ -75,7 +75,7 @@ function output() {
     Simulated Pie ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp ${nf(pie,1,5)} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp ${lowStop}0 - ${highStop}0 <br> &nbsp  
     Number of Darts ;&nbsp;&nbsp;&nbsp${darts} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp \> ${dartMinimumStop} <br> &nbsp 
     % Deviation ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp${nf((PI - pie) * 100 / PI,1,5)} % <br> &nbsp 
-    randomMethod &nbsp;&nbsp;&nbsp;&nbsp ${randomMethod} &nbsp;&nbsp ${seed}<br>&nbsp ${digitsMethod.substring(0,75)}`);
+    randomMethod &nbsp;&nbsp;&nbsp;&nbsp ${randomMethod} &nbsp;&nbsp ${seed}<br>&nbsp ${digitsMethod.substring(0,80)}`);
 
     // JS Template literals   ` ticks above tilde symbol
 }
@@ -84,7 +84,7 @@ function p5js() {
     return random(0, diam);
 }
 
-function rndPie() {
+function rndDigits() {
     return randomDigits(0, diam);
 }
 

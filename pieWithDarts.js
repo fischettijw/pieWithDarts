@@ -24,6 +24,7 @@ function initialize() {
     // randomMethod = (randomMethod == null) ? rndStandard : randomMethod;
     // randomSeed((seed == null) ? null : seed); // p5js
     // randomSeedDigits(((seed == null) ? 0 : seed)); // rndDigits
+
 }
 
 function setup() {

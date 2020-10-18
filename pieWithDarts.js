@@ -16,7 +16,7 @@ function initialize() {
     darts = 0;
     inCircle = 0;
     ratio = 0;
-    pie = 1000;
+    pie = 0;
     pieDiv;
     seed = null; // use null for no seed
     randomMethod = rndStandard; // rndStandard or rndDigits

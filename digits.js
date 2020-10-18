@@ -1,4 +1,4 @@
-let rndIndex;
+let rndIndex = 0;
 
 
 function randomSeedDigits(seed) {

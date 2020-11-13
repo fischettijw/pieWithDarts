@@ -1,6 +1,5 @@
 let rndIndex = 0;
 
-
 function randomSeedDigits(seed) {
     if (seed == null) {
         rndIndex = 0;

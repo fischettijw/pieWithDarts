@@ -11,7 +11,6 @@ let ratio, pie, pieDiv;
 let seed, randomMethod, digitsMethod;
 
 function initialize() {
-    // rndIndex = 0;
     dartWeight = 1;
     darts = 0;
     inCircle = 0;
@@ -37,9 +36,6 @@ function setup() {
         circle(diam / 2, diam / 2, diam);
     }
     pieDiv = createDiv().style('font-size', '14pt');
-    // randomSeedDigits();
-    // randomSeed();
-    // rndIndex = seed;
 }
 
 function draw() {
@@ -85,8 +81,6 @@ function output() {
     Number of Darts ;&nbsp;&nbsp;&nbsp${darts} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp \> ${dartMinimumStop} \< ${dartMaximumStop}<br> &nbsp 
     % Deviation ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp${nf((PI - pie) * 100 / PI,1,5)} % <br> &nbsp 
     randomMethod &nbsp;&nbsp;&nbsp;&nbsp ${randomMethod} &nbsp;&nbsp ${seed}<br>&nbsp ${digitsMethod.substring(0,80)}`);
-
-    // JS Template literals   ` ticks above tilde symbol
 }
 
 function rndStandard() {

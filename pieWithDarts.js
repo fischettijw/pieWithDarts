@@ -21,10 +21,9 @@ function initialize() {
     seed = null; // use null for no seed
     randomMethod = rndStandard; // rndStandard or rndDigits
     digitsMethod = digitsOfPie; // rndDigits==> digitsOfPie or digitsOfE
-    // randomMethod = (randomMethod == null) ? rndStandard : randomMethod;
-    // randomSeed((seed == null) ? null : seed); // p5js
-    // randomSeedDigits(((seed == null) ? 0 : seed)); // rndDigits
-
+    if (seed != null) {
+        randomSeed(seed);
+    }
 }
 
 function setup() {
@@ -91,12 +90,9 @@ function output() {
 }
 
 function rndStandard() {
-    // randomSeed(seed);
     return random(0, diam);
 }
 
 function rndDigits() {
-    // randomSeedDigits(1);
-    // randomSeedDigits(((seed == null) ? 0 : seed));
     return randomDigits(0, diam);
 }

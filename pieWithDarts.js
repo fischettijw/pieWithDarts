@@ -18,8 +18,8 @@ function initialize() {
     pie = 0;
     pieDiv;
     seed = null; // use null for no seed
-    randomMethod = rndStandard; // rndStandard or rndDigits
-    digitsMethod = digitsOfPie; // rndDigits==> digitsOfPie or digitsOfE
+    randomMethod = rndDigits; // rndStandard or rndDigits
+    digitsMethod = digitsOfE; // rndDigits==> digitsOfPie or digitsOfE
     if (seed != null) {
         randomSeed(seed);
     }

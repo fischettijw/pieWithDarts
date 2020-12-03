@@ -6,6 +6,7 @@ const lowStop = 3.14155;
 const highStop = 3.14163;
 const drawGraphic = true;
 
+let results;
 let dartWeight, darts, inCircle;
 let ratio, pie, pieDiv;
 let seed, randomMethod, digitsMethod;
@@ -17,11 +18,17 @@ function initialize() {
     ratio = 0;
     pie = 0;
     pieDiv;
-    seed = null; // use null for no seed
+    if (seed == null) {
+        seed = 66; // use null for no seed
+    }
+    seed++;
     randomMethod = rndDigits; // rndStandard or rndDigits
     digitsMethod = digitsOfE; // rndDigits==> digitsOfPie or digitsOfE
     if (seed != null) {
         randomSeed(seed);
+    }
+    if (results == null) {
+        results = createStringDict(0, 0);
     }
 }
 
@@ -36,9 +43,11 @@ function setup() {
         circle(diam / 2, diam / 2, diam);
     }
     pieDiv = createDiv().style('font-size', '14pt');
+
 }
 
 function draw() {
+    // for (trial = 0; trial < 10; trial++) {
     generateDarts(batchDarts);
     if (drawGraphic) {
         stroke(255, 0, 0);
@@ -47,7 +56,13 @@ function draw() {
         circle(diam / 2, diam / 2, diam);
         stroke('red');
     }
-    output();
+    // output();
+    // results.create(seed, `${pie}, ${darts}`)
+    background(220);
+    setup();
+    // }
+    // results.saveTable("results");
+    // noLoop();
 }
 
 function generateDarts(n) {

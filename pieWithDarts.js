@@ -6,10 +6,12 @@ const lowStop = 3.14155;
 const highStop = 3.14163;
 const drawGraphic = true;
 
-let results;
 let dartWeight, darts, inCircle;
 let ratio, pie, pieDiv;
-let seed, randomMethod, digitsMethod;
+let randomMethod, digitsMethod;
+let seed = 67; // use null for no seed
+let results;
+let numTrials = 0;
 
 function initialize() {
     dartWeight = 1;
@@ -17,11 +19,7 @@ function initialize() {
     inCircle = 0;
     ratio = 0;
     pie = 0;
-    pieDiv;
-    if (seed == null) {
-        seed = 66; // use null for no seed
-    }
-    seed++;
+    // pieDiv;
     randomMethod = rndDigits; // rndStandard or rndDigits
     digitsMethod = digitsOfE; // rndDigits==> digitsOfPie or digitsOfE
     if (seed != null) {
@@ -43,11 +41,9 @@ function setup() {
         circle(diam / 2, diam / 2, diam);
     }
     pieDiv = createDiv().style('font-size', '14pt');
-
 }
 
 function draw() {
-    // for (trial = 0; trial < 10; trial++) {
     generateDarts(batchDarts);
     if (drawGraphic) {
         stroke(255, 0, 0);
@@ -56,13 +52,25 @@ function draw() {
         circle(diam / 2, diam / 2, diam);
         stroke('red');
     }
-    // output();
-    // results.create(seed, `${pie}, ${darts}`)
-    background(220);
-    setup();
+    output();
+    if (isLooping() == false) {
+        results.create(seed, `${nf(pie,1,8)}, ${darts}`);
+        numTrials++;
+        setup();
+        if (numTrials < 3) {
+            loop();
+        } else {
+            results.saveTable('results')
+            noLoop();
+        }
+
+    }
+    // if (numTrials = 3) {
+    //     results.saveTable('results')
+    //         // numTrials = 0;
+    //     noLoop();
     // }
-    // results.saveTable("results");
-    // noLoop();
+    // loop();
 }
 
 function generateDarts(n) {
